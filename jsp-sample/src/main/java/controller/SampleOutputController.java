@@ -12,13 +12,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * input画面表示クラス
+ * outputクラス
 */
 @WebServlet("/output")
 public class SampleOutputController extends HttpServlet {
 	
 	private static final Logger logger = LogManager.getLogger(SampleOutputController.class);
 	final static String NONE_INPUT = "未入力";
+	
 	/**
 	 * SampleInputControllerから受け取ったものをフォワードする
 	 * 
@@ -27,7 +28,6 @@ public class SampleOutputController extends HttpServlet {
 	 * @throws ServletException, IOException
 	*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// リクエストのエンコーディングを指定
 		
 		// リクエストスコープからはObject型が返ってくるためキャスト
 		final String name = (String) request.getAttribute("nameForOutput");
